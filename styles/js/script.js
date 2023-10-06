@@ -1,3 +1,3 @@
 function proposal(){
-    window.location.href = "../proposal.html";
+    window.location.href = "../pages/proposal.html";
 }
