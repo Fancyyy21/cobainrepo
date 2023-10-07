@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cover - Free Bulma template</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contact.css">
     <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -35,8 +35,8 @@
                                 <ul>
                                     <li><a href="../index.html">Home</a></li>
                                     <li><a href="../pages/proposal.html">Proposal</a></li>
-                                    <li class="is-active"><a href="../pages/introvideo.html">Intro-Video</a></li>
-                                    <li><a href="../pages/contact.html">Contact Us</a></li>
+                                    <li><a href="../pages/introvideo.html">Intro-Video</a></li>
+                                    <li class="is-active"><a href="../pages/contact.html">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -47,27 +47,22 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="columns is-vcentered">
-                    <div class="column is-7">
-                        <video width="720" height="240" controls>
-                            <source src="../assets/video/Waterfall Clip.mp4" type="video/mp4">
-                            <!-- <source src="movie.ogg" type="video/ogg"> -->
-                            Your browser does not support the video tag.
-                          </video>
-                    </div>
-                    <div class="column is-5">
-                        <h1 class="title is-3">
-                            Introduction Video
-                        </h1>
-                        <h2 class="subtitle is-6">
-                            Ini adalah video introduction dari proyek 3 Maulana dan Raul
-                        </h2>
-                        <br>
-                        <p class="has-text-centered">
-                            <a class="button is-medium is-info is-outlined">
-                                Learn more
-                            </a>
-                        </p>
-                    </div>
+                    
+                    <div class="contact"><form action="https://eox49ed2rdqqviy.m.pipedream.net" method="post">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required><br><br>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required><br><br>
+                
+                        <label for="message">Message:</label><br>
+                        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                    
+
                 </div>
             </div>
         </div>
