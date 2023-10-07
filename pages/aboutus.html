@@ -34,10 +34,10 @@
                             <div class="tabs is-right">
                                 <ul>
                                     <li><a href="../index.html">Home</a></li>
-                                    <li class="is-active"><a href="../pages/proposal.html">Proposal</a></li>
+                                    <li><a href="../pages/proposal.html">Proposal</a></li>
                                     <li><a href="../pages/introvideo.html">Intro-Video</a></li>
                                     <li><a href="../pages/contact.html">Contact Us</a></li>
-                                    <li><a href="../pages/aboutus.html">About Us</a></li>
+                                    <li class="is-active"><a href="../pages/aboutus.html">About Us</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -47,27 +47,47 @@
         </div>
         <div class="hero-body">
             <div class="container has-text-centered">
-                <div class="columns is-vcentered">
-                    <div class="column is-5">
+
+                <!-- Foto Maulana About Maulana -->
+                <div style="text-align: left;"  class="columns is-centered">
+                    <div class="column is-4">
                         <figure class="image is-4by3">
-                            <img src="https://picsum.photos/800/600/?random" alt="Description">
+                            <img src="../assets/img/fotomaul.jpg" alt="Description">
                         </figure>
                     </div>
                     <div class="column is-6 is-offset-1">
-                        <h1 class="title is-3">
-                            Superhero Scaffolding
-                        </h1>
-                        <h2 class="subtitle is-6">
-                            Let this cover page describe a product or service.
-                        </h2>
-                        <br>
-                        <p class="has-text-centered">
-                            <a class="button is-medium is-info is-outlined">
-                                Learn more
-                            </a>
-                        </p>
+                        <div id="user-info">
+                            <h1>User Information</h1>
+                            <ul>
+                                <li><strong>Nama:</strong> <span id="nama-maul"></span></li>
+                                <li><strong>Kelas:</strong> <span id="kelas-maul"></span></li>
+                                <li><strong>NPM:</strong> <span id="npm-maul"></span></li>
+                                <li><strong>Kontak:</strong> <span id="kontak-maul"></span></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Foto Raul About Raul -->
+                <div style="text-align: left;" class="columns is-centered">
+                    <div class="column is-4">
+                        <figure class="image is-4by3">
+                            <img src="../assets/img/fotoraul.jpg" alt="Description">
+                        </figure>
+                    </div>
+                    <div class="column is-6 is-offset-1">
+                        <div id="user-info">
+                            <h1>User Information</h1>
+                            <ul>
+                                <li><strong>Nama:</strong> <span id="nama-raul"></span></li>
+                                <li><strong>Kelas:</strong> <span id="kelas-raul"></span></li>
+                                <li><strong>NPM:</strong> <span id="npm-raul"></span></li>
+                                <li><strong>Kontak:</strong> <span id="kontak-raul"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -81,6 +101,7 @@
             </div>
         </div>
     </section>
+    <script type="module" src="../js/index.js"></script>
     <script type="module" src="../js/bulma.js"></script>
 </body>
 
