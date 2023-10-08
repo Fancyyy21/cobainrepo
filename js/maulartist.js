@@ -1,5 +1,5 @@
 // Mendapatkan data dari file JSON menggunakan Fetch API
-fetch('../filejson/maul.json')
+fetch('./filejson/maul.json')
   .then(response => response.json()) // Mengonversi respons ke JSON
   .then(data => {
     // Mengakses data artis dari objek JSON
