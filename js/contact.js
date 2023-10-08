@@ -1,44 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contact-form');
-    const successNotification = document.querySelector('.notification.is-success');
-    const errorNotification = document.querySelector('.notification.is-error');
-    const deleteButtons = document.querySelectorAll('.delete');
+// Mendengarkan acara pengajuan formulir
+document.querySelector('.custom-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Menghentikan perilaku pengajuan formulir bawaan
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+    // Mengambil nilai dari formulir
+    const name = document.getElementById('contact-name').value;
+    const email = document.getElementById('contact-email').value;
+    const company = document.getElementById('contact-company').value;
+    const message = document.getElementById('contact-message').value;
 
-        // Get form data
-        const formData = new FormData(form);
+    // Membuat objek data yang akan dikirim ke API
+    const data = {
+        name: name,
+        email: email,
+        company: company,
+        message: message
+    };
 
-        // Send POST request using fetch()
-        fetch('https://eox49ed2rdqqviy.m.pipedream.net', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (response.ok) {
-                // Show success notification
-                successNotification.style.display = 'block';
-            } else {
-                // Show error notification
-                errorNotification.style.display = 'block';
-            }
-            // Clear the form fields after submission
-            form.reset();
-        })
-        .catch(error => {
-            // Show error notification if there is a network error
-            errorNotification.style.display = 'block';
-            // Handle other errors here
-            console.error('Error:', error);
-        });
-
-        // Hide notifications when delete button is clicked
-        deleteButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                successNotification.style.display = 'none';
-                errorNotification.style.display = 'none';
-            });
-        });
+    // Mengirim permintaan POST ke API menggunakan Fetch API
+    fetch('https://eox49ed2rdqqviy.m.pipedream.net', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json()) // Mengonversi respons ke JSON
+    .then(data => {
+        console.log('Sukses:', data);
+        // Lakukan sesuatu setelah permintaan berhasil, misalnya menampilkan pesan sukses kepada pengguna
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Lakukan sesuatu jika terjadi kesalahan, misalnya menampilkan pesan kesalahan kepada pengguna
     });
 });
