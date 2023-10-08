@@ -1,5 +1,5 @@
 // Mendapatkan data dari file JSON menggunakan Fetch API
-fetch('./filejson/raul.json')
+fetch('https://raw.githubusercontent.com/Fancyyy21/cobainrepo/main/filejson/raul.json')
   .then(response => response.json()) // Mengonversi respons ke JSON
   .then(data => {
     // Mengakses data artis dari objek JSON
