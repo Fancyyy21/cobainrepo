@@ -8,7 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Fancypedia Store</title>
+    <title>Fancypedia</title>
+
+    <link rel="icon" href="../assets/img/logofancypedia3.png">
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +26,19 @@
     <link href="../css/templatemo-festava-live.css" rel="stylesheet">
    
 </head>
+<style>
+    img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
 
 <body>
 
@@ -35,7 +50,7 @@
 
                     <div class="col-lg-12 col-12 d-flex flex-wrap">
                         <p class="d-flex me-4 mb-0">
-                            <strong class="text-dark">Welcome to Fancypedia Store</strong>
+                            <strong class="text-dark">👤 Welcome to Proposal Proyek 3</strong>
                         </p>
                     </div>
 
@@ -46,7 +61,7 @@
 
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="../index.html">
                     Fancypedia
                 </a>
 
@@ -89,16 +104,32 @@
         <section class="ticket-section section-padding">
             <div class="section-overlay"></div>
 
-            <div class="container">
+            <div class="container d-flex justify-content-center align-items-center">
                 <div class="row">
-
-                    <div style="margin-right: 3cm;margin-left: 3cm;background-color: #FAFAFA;font: 12pt" class="col-lg-12 col-12 mx-auto">
-
-                        <div style="text-align: center;" id="proyek-info"></div>
-                    
-                    </div>
-
+                    <div class="container-md">
+                        <div id="contentid" class="content">
+                            <h1 style="text-align: left; font-size: 42px;" id="judulProposal"></h1>
+                            <hr>
+                            <div style="text-align: justify;" id="abstrakProposal"></div>
+                            <hr>
+                            <div style="text-align: justify;" id="latarBelakangProposal"></div>
+                            <hr>
+                            <div style="text-align: justify;" id="deskripsiAplikasi"></div>
+                            <hr>
+                            <div style="text-align: justify;" id="tujuanAplikasi"></div>
+                            <hr>
+                            <div style="text-align: justify;" id="lingkupDokumentasi"></div>
+                            <hr>
+                            <div style="text-align: justify;" id="waktuPelaksanaan"></div>
+                            <hr>
+                            <img style="object-fit: cover;" src="https://raw.githubusercontent.com/Fancypedia/fancypedia-store/main/assets/img/jadwalpelaksanaan.png">
+                        </div>    
+                    </div>  
                 </div>
+            </div>
+                
+                        <!--Isi Konten -->
+              
         </section>
     </main>
 

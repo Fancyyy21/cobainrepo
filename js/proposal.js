@@ -1,106 +1,62 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const proyekInfoDiv = document.getElementById('proyek-info');
+import data from "../filejson/proposal.json" assert { type: "json" };
+import { setInner } from "https://jscroot.github.io/element/croot.js";
 
-    // Menggunakan URL relatif untuk mengambil file JSON dari folder yang sama
-    const url = '../filejson/proposal.json';
+// console.log(`${data.article.judulProposal}`)
+setInner("judulProposal", data.article.judulProposal);
 
-    // Mengambil data JSON menggunakan fetch
-    fetch(url)
-        .then(response => response.json())
-        .then(proyekData => {
-            // Membuat elemen-elemen HTML untuk menampilkan data proyek
-            const proyekTitle = document.createElement('h1');
-            proyekTitle.textContent = proyekData.Judul;
+//Abstrak
+setInner("abstrakProposal", `
+<h2>Abstrak</h2>
+<p>${data.article.abstrakProposal}</p>
+<p>${data.article.katakunciProposal}</p>
+`);
 
-            const proyekProposal = document.createElement('p');
-            proyekProposal.textContent = `Proposal: ${proyekData.Proposal}`;
+//Latar Belakang
+setInner("latarBelakangProposal", `
+<h2>Latar Belakang</h2>
+<p>${data.article.latarBelakang1}</p>
+`);
 
-            const proyekDescription = document.createElement('p');
-            proyekDescription.textContent = proyekData.Ditunjukan;
+//Deskripsi Aplikasi
+let listDeskripsiAplikasi = data.article.deskripsiAplikasi1.map((item, index) => {
+    return `<li>${item}</li>`;
+})
+setInner("deskripsiAplikasi", `
+<h2>Deskripsi Aplikasi</h2>
+<p>${data.article.deskripsiAplikasi}</p>
+<ul>${listDeskripsiAplikasi.join("")}</ul>
+`);
 
-            const proyekLogo = document.createElement('img');
-            proyekLogo.src = proyekData.logo;
-            proyekLogo.alt = 'Logo Proyek';
+//Tujuan Aplikasi
+let listTujuanAplikasi = data.article.tujuanAplikasi.map((item, index) => {
+    return `<li>${item}</li>`;
+})
+setInner("tujuanAplikasi", `
+<h2>Tujuan Aplikasi</h2>
+<ul>${listTujuanAplikasi.join("")}</ul>
+`);
 
-            const proyekProgram = document.createElement('p');
-            proyekProgram.textContent = `Program: ${proyekData.Program}`;
-
-            const Ditunjukan = document.createElement('p');
-            Ditunjukan.textContent = `Ditunjukan: ${proyekData.Ditunjukan}`;
-
-            const Program = document.createElement('p');
-            Program.textContent = `Program: ${proyekData.Program}`;
-
-            const Abstrak = document.createElement('p');
-            Abstrak.textContent = `Abstrak: ${proyekData.Abstrak}`;
-
-            const deskripsiaplikasi = document.createElement('p');
-            deskripsiaplikasi.textContent = `Deskripsi Aplikasi: ${proyekData.deskripsiaplikasi}`;
-
-            const latarbelakang = document.createElement('p');
-            latarbelakang.textContent = `Latar Belakang: ${proyekData.latarbelakang}`;
-
-            const Tujuan = document.createElement('p');
-            Tujuan.textContent = `Tujuan: ${proyekData.Tujuan}`;
-
-            const LingkupDanManfaat = document.createElement('p');
-            LingkupDanManfaat.textContent = `Lingkup Dan Manfaat: ${proyekData.LingkupDanManfaat}`;
-
-            const kajianpustaka = document.createElement('p');
-            kajianpustaka.textContent = `Kajian Pustaka: ${proyekData.kajianpustaka}`;
-
-            const pembimbing = document.createElement('p');
-            pembimbing.textContent = `Pembimbing: ${proyekData.pembimbing}`;
-
-            const tanggalMulai = document.createElement('p');
-            proyekProgram.textContent = `Tanggal Mulai: ${proyekData.tanggalMulai}`;
-
-            const tanggalSelesai = document.createElement('p');
-            tanggalSelesai.textContent = `Tanggal Selesai: ${proyekData.tanggalSelesai}`;
-
-            const hasilProyek = document.createElement('p');
-            hasilProyek.textContent = `Hasil Proyek: ${proyekData.hasilProyek}`;
-
-           const kontak = document.createElement('p');
-           kontak.textContent = `Kontak: ${proyekData.kontak}`;
-
-            const targetAudience = document.createElement('p');
-            targetAudience.textContent = `Target Audience: ${proyekData.targetAudience}`;
-
-            const fiturUTamam = document.createElement('p');
-            fiturUTamam.textContent = `Fitur Utama: ${proyekData.fiturUTama}`;
-             
-            const Manfaat = document.createElement('p');
-            Manfaat.textContent = `Manfaat: ${proyekData.Manfaat}`;
-
-            // Menambahkan elemen-elemen HTML ke dalam div proyek-info
-            proyekInfoDiv.appendChild(proyekTitle);
-            proyekInfoDiv.appendChild(proyekProposal);
-            proyekInfoDiv.appendChild(proyekDescription);
-            proyekInfoDiv.appendChild(proyekLogo);
-            proyekInfoDiv.appendChild(proyekProgram);
-            proyekInfoDiv.appendChild(Ditunjukan);
-            proyekInfoDiv.appendChild(Program);
-            proyekInfoDiv.appendChild(Abstrak);
-            proyekInfoDiv.appendChild(deskripsiaplikasi);
-            proyekInfoDiv.appendChild(latarbelakang);
-            proyekInfoDiv.appendChild(Tujuan);
-            proyekInfoDiv.appendChild(LingkupDanManfaat);
-            proyekInfoDiv.appendChild(kajianpustaka);
-            proyekInfoDiv.appendChild(pembimbing);
-            proyekInfoDiv.appendChild(tanggalMulai);
-            proyekInfoDiv.appendChild(tanggalSelesai);
-            proyekInfoDiv.appendChild(hasilProyek);
-            proyekInfoDiv.appendChild(kontak);
-            proyekInfoDiv.appendChild(targetAudience);
-            proyekInfoDiv.appendChild(fiturUTamam);
-            proyekInfoDiv.appendChild(Manfaat);
+//Tujuan Aplikasi
+let listLingkupDokumentasi = data.article.lingkupDokumentasi.map((item, index) => {
+    return `<li>${item}</li>`;
+})
+setInner("lingkupDokumentasi", `
+<h2>Lingkup Dokumentasi</h2>
+<ul>${listLingkupDokumentasi.join("")}</ul>
+`);
 
 
+//waktuPelaksanaan
+setInner("waktuPelaksanaan", `
+<h2>Waktu Pengerjaan</h2>
+<p>${data.article.waktuPelaksanaan}</p>
+`);
 
-            // Anda dapat melanjutkan dengan menambahkan elemen-elemen lainnya sesuai dengan data JSON Anda.
-        })
-        .catch(error => {
-            console.error('Terjadi kesalahan saat mengambil data JSON:', error);
-        });
-});
+//jadwalPelaksanaan
+setInner("jadwalPelaksanaan", `
+<h2>Jadwal Pelaksanaan</h2>
+<img>${data.article.jadwalimgelaksanaan}</img>
+`);
+
+
+// app.js
